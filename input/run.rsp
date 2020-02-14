@@ -1,0 +1,5 @@
+--libnucnet_xml /input_directory/out.xml
+--induced_nuc_xpath "[z >= 10 and z <= 30 and a - z >= 10 and a - z <= 40]"
+--zone_xpath ""
+--graph_reaction_color "{[product[contains(.,'neutrino')]]; red}" "{[reactant = 'he4' or product = 'he4']; blue}"
+--allow_isolated_vertices false
