@@ -57,10 +57,9 @@ If you want to combine the individual files into a single file (and remove all t
 
 In this case, the flow diagrams will be combined into a single file *work/output/out.pdf*.
 
-One can edit the response file and/or add options.  For example, to only create flow diagrams for
-the first 30 timesteps in the calculation recorded in *input.xml*, type:
+One can edit the response file and/or add options.  For example, to schema validate the file *input.xml* before computing flow diagrams, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --zone_xpath '"'[position() <= 30]'"'" flow_grapher:default**
+**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --validate=true" flow_grapher:default**
 
 Linux users may find they need to prepend *sudo* to run docker.  For example, they may need to type:
 
