@@ -31,9 +31,7 @@ Now create a directory for the input and output.  Type:
 
 **cp input/run.rsp work/input/**
 
-Now get the data file from which you will graph the flows.  This could be, for example, the output from running a [single_zone docker](https://github.com/mbradle/docker_single_zone/blob/master/README.md) containter.
-Place the xml file you will use in the *work/input* directory with the name *input.xml*.  For example, copy the *docker_single_zone/work/output/out.xml* you obtained from the single-zone docker container you built
-to *work/input/input.xml* in *docker_graph_flows*.
+Now get the data file from which you will graph the flows.  This could be, for example, the output from running a [single_zone docker](https://github.com/mbradle/docker_single_zone/blob/master/README.md) containter. Place the xml file you will use in the *work/input* directory with the name *input.xml*.  For example, copy the *docker_single_zone/work/output/out.xml* you obtained from the single-zone docker container you built to *work/input/input.xml* in *docker_graph_flows*.
 
 Now note the answer to typing
 
