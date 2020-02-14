@@ -39,7 +39,8 @@ Now note the answer to typing
 
 **pwd**
 
-In the instructions below, you should simply be able to use the commands verbatim (most likely, you will simply cut and paste).  If that does not work, replace the *$PWD* present with the string that is returned by the *pwd* command.  
+In the instructions below, you should simply be able to use the commands verbatim (most likely, you will simply cut and paste).  If that does not work, replace the *$PWD* present with the string that is returned by the *pwd* command.
+
 Now edit *work/input/run.rsp*.  Run the calculation.  For example, type:
 
 **docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
