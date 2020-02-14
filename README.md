@@ -44,7 +44,19 @@ Now edit *work/input/run.rsp*.  Run the calculation.  For example, type:
 
 **docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
 
-The output will a number of *dot*, *tex*, and *pdf* files in the directory *work/output/flows*.  One can edit the response file and/or add options.  For example, to only create flow diagrams for
+The output will a number of *dot*, *tex*, and *pdf* files in the directory *work/output/flows*.  If you want write the files to a differeent directory, set the *OUT_DIR* environment variable.  For example, type:
+
+**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e OUT_DIR=/output_directory/my_flows flow_grapher:default**
+
+In this case, the output files will be in the directory *work/output/my_flows*.
+
+If you want to combine the individual files into a single file (and remove all the individual files), use the *OUT_FILE* variable.  For example, type:
+
+**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e  OUT_FILE=/output_directory/out.pdf flow_grapher:default**
+
+In this case, the flow diagrams will be combined into a single file *work/output/out.pdf*.
+
+One can edit the response file and/or add options.  For example, to only create flow diagrams for
 the first 30 timesteps in the calculation recorded in *input.xml*, type:
 
 **docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --zone_xpath '"'[position() <= 30]'"'" flow_grapher:default**
