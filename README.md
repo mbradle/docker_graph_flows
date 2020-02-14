@@ -51,7 +51,7 @@ the first 30 timesteps in the calculation recorded in *input.xml*, type:
 
 Linux users may find they need to prepend *sudo* to run docker.  For example, they may need to type:
 
-**sudo docker run -it -v $PWD/work/input/data_pub:/data_directory -e VAR=data webnucleo/data_download**
+**sudo docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
 
 Here are some [notes](https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo) on running without *sudo* that may be of interest.
 
