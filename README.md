@@ -55,9 +55,11 @@ If you want to combine the individual files into a single file (and remove all t
 
 In this case, the flow diagrams will be combined into a single file *work/output/out.pdf*.
 
-One can edit the response file and/or add options.  For example, to schema validate the file *input.xml* before computing flow diagrams, type:
+One can edit the response file and/or add options.  For example, to change the node shape and color for stable nuclei, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --validate=true" flow_grapher:default**
+**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --node_shape oval --stable_color=#0090ff" -e OUT_FILE=/output_directory/out.pdf flow_grapher:default**
+
+Note that the color is given in hexidecimal.  [w3schools.com](https://w3schools.com) has a nice [web site](https://www.w3schools.com/html/html_colors_hex.asp) on this topic.
 
 Linux users may find they need to prepend *sudo* to run docker.  For example, they may need to type:
 
