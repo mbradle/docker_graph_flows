@@ -22,7 +22,7 @@ RUN make graph_flows
 
 CMD \
   if [ "$HEADER_COPY_DIRECTORY" ]; then \
-    cp /my-projects/graph/default/master.h ${HEADER_COPY_DIRECTORY}/master.h; \
+    cp /my-projects/graph_flows/default/master.h ${HEADER_COPY_DIRECTORY}/master.h; \
   else \
       if [ "$OUT_DIR" ]; then \
           rm -fr $OUT_DIR ;\
