@@ -37,33 +37,33 @@ Now note the answer to typing
 
 **pwd**
 
-In the instructions below, you should simply be able to use the commands verbatim (most likely, you will simply cut and paste).  If that does not work, replace the *$PWD* present with the string that is returned by the *pwd* command.
+In the instructions below, you should simply be able to use the commands verbatim (most likely, you will simply cut and paste).  If that does not work, replace the *${PWD}* present with the string that is returned by the *pwd* command.
 
 Now edit *work/input/run.rsp*.  Run the calculation.  For example, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
+**docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
 
 The output will a number of *dot*, *tex*, and *pdf* files in the directory *work/output/flows*.  If you want write the files to a differeent directory, set the *OUT_DIR* environment variable.  For example, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e OUT_DIR=/output_directory/my_flows flow_grapher:default**
+**docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e OUT_DIR=/output_directory/my_flows flow_grapher:default**
 
 In this case, the output files will be in the directory *work/output/my_flows*.
 
 If you want to combine the individual files into a single file (and remove all the individual files), use the *OUT_FILE* variable.  For example, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e  OUT_FILE=/output_directory/out.pdf flow_grapher:default**
+**docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e  OUT_FILE=/output_directory/out.pdf flow_grapher:default**
 
 In this case, the flow diagrams will be combined into a single file *work/output/out.pdf*.
 
 One can edit the response file and/or add options.  For example, to change the node shape and color for stable nuclei, type:
 
-**docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR="@/input_directory/run.rsp --node_shape oval --stable_color=#00ff90" -e OUT_FILE=/output_directory/out.pdf flow_grapher:default**
+**docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR="@/input_directory/run.rsp --node_shape oval --stable_color=#00ff90" -e OUT_FILE=/output_directory/out.pdf flow_grapher:default**
 
 Note that the color is given in hexidecimal.  [w3schools.com](https://w3schools.com) has a nice [web site](https://www.w3schools.com/html/html_colors_hex.asp) on this topic.
 
 Linux users may find they need to prepend *sudo* to run docker.  For example, they may need to type:
 
-**sudo docker run -it -v $PWD/work/input:/input_directory -v $PWD/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
+**sudo docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
 
 Here are some [notes](https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo) on running without *sudo* that may be of interest.
 
@@ -99,7 +99,7 @@ will clear out everything and start over if you prefer.
 
 Next, download the default *master.h* to the *$PWD* directory.  Type:
 
-**docker run -it -v $PWD:/header_directory -e HEADER_COPY_DIRECTORY=/header_directory flow_grapher:default**
+**docker run -it -v ${PWD}:/header_directory -e HEADER_COPY_DIRECTORY=/header_directory flow_grapher:default**
 
 Edit *master.h*.  Now rebuild, but set the WN_USER flag:
 
