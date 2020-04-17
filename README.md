@@ -43,7 +43,7 @@ Now edit *work/input/run.rsp*.  Run the calculation.  For example, type:
 
 **docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp flow_grapher:default**
 
-The output will a number of *dot*, *tex*, and *pdf* files in the directory *work/output/flows*.  If you want write the files to a differeent directory, set the *OUT_DIR* environment variable.  For example, type:
+The output will be a number of *dot*, *tex*, and *pdf* files in the directory *work/output/flows*.  If you want write the files to a different directory, set the *OUT_DIR* environment variable.  For example, type:
 
 **docker run -it -v ${PWD}/work/input:/input_directory -v ${PWD}/work/output:/output_directory -e VAR=@/input_directory/run.rsp -e OUT_DIR=/output_directory/my_flows flow_grapher:default**
 
