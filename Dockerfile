@@ -12,6 +12,10 @@ WORKDIR /my-projects
 
 RUN git -C ${WN_USER_TARGET} pull
 
+WORKDIR /my-projects/wn_user
+
+WORKDIR /my-projects
+
 RUN git clone https://mbradle@bitbucket.org/mbradle/graph_flows.git
 
 WORKDIR /my-projects/graph_flows
