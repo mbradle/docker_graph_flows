@@ -32,7 +32,7 @@ CMD \
           rm -fr $OUT_DIR ;\
           mkdir -p $OUT_DIR ;\
           ./graph_flows $VAR --graph_output_base $OUT_DIR/out ;\
-          ./flow_graph.sh $OUT_DIR ;\
+          ./make_pdfs.sh $OUT_DIR ;\
           if [ "$OUT_FILE" ]; then \
              ./combine_graphs.sh $OUT_DIR $OUT_FILE ; \
           fi \
@@ -40,7 +40,7 @@ CMD \
           rm -fr /output_directory/flows ;\
           mkdir -p /output_directory/flows ;\
           ./graph_flows $VAR --graph_output_base /output_directory/flows/out ;\
-          ./flow_graph.sh /output_directory/flows ;\
+          ./make_pdfs.sh /output_directory/flows ;\
           if [ "$OUT_FILE" ]; then \
              ./combine_graphs.sh /output_directory/flows $OUT_FILE ; \
           fi \
